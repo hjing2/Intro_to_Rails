@@ -1,0 +1,17 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  school: MyString
+  street_name: MyString
+  language: MyString
+  year_installed: 1
+  legislation_link: MyString
+  location: MyString
+
+two:
+  school: MyString
+  street_name: MyString
+  language: MyString
+  year_installed: 1
+  legislation_link: MyString
+  location: MyString

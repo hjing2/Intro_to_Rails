@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Winnipeg Data Explorer</title>
+  <%= csrf_meta_tags %>
+  <%= csp_meta_tag %>
+  <%= stylesheet_link_tag 'application', media: 'all' %>
+  <%= javascript_importmap_tags %>
+</head>
+<body>
+  <header>
+    <h1>Winnipeg Data Explorer</h1>
+    # Search feature
+    <form action="<%= search_path %>" method="get" class="form-inline my-2 my-lg-0">
+      <input class="form-control mr-sm-2" type="search" name="q" placeholder="Search" aria-label="Search">
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+    </form>
+    # Dropdown category
+    <form action="<%= search_path %>" method="get" class="form-inline my-2 my-lg-0">
+      <input class="form-control mr-sm-2" type="search" name="q" placeholder="Search in category..." aria-label="Search">
+      <select name="category" class="form-control mr-sm-2">
+        <option value="addresses">Addresses</option>
+        <option value="schools">Schools</option>
+        <option value="parks">Parks</option>
+      </select>
+      <button class="btn btn-outline-primary my-2 my-sm-0" type="submit">Search by Category</button>
+    </form>
+
+
+    <nav>
+      <ul>
+        <li><%= link_to 'Home', root_path %></li>
+        <li><%= link_to 'Winnipeg Addresses', addresses_path %></li>
+        <li><%= link_to 'Winnipeg Parks', parks_path %></li>
+        <li><%= link_to 'Winnipeg Schools', schools_path %></li>
+        <li><%= link_to 'About', about_path %></li>
+      </ul>
+    </nav>
+  </header>
+  <main>
+    <%= yield %>
+  </main>
+</body>
+</html>

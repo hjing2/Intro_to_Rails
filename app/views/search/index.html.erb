@@ -1,0 +1,43 @@
+<h1>Search Results</h1>
+
+<% if @results.any? %>
+  <ul>
+    <% @results.each do |result| %>
+      <li>
+        <%= link_to case result
+                   when Address
+                     result.full_address
+                   when School
+                     result.school
+                   when Park
+                     result.park_name
+                   end, polymorphic_path(result) %>
+      </li>
+    <% end %>
+  </ul>
+<% else %>
+  <p>No results found for "<%= @query %>"</p>
+<% end %>
+
+# <h1>Search Results</h1>
+
+# <h2>Addresses</h2>
+# <ul>
+#   <% @addresses.each do |address| %>
+#     <li><%= link_to address.full_address, address_path(address) %></li>
+#   <% end %>
+# </ul>
+
+# <h2>Schools</h2>
+# <ul>
+#   <% @schools.each do |school| %>
+#     <li><%= link_to school.school, school_path(school) %></li>
+#   <% end %>
+# </ul>
+
+# <h2>Parks</h2>
+# <ul>
+#   <% @parks.each do |park| %>
+#     <li><%= link_to park.park_name, park_path(park) %></li>
+#   <% end %>
+# </ul>

@@ -1,0 +1,11 @@
+<h1>Addresses#index</h1>
+<p>Show some address information</p>
+<% @addresses.each do |address| %>
+  <div>
+    <h2><%= link_to address.full_address, address_path(address) %></h2>
+    <p>Neighbourhood: <%= address.neighbourhood %></p>
+    <p>Street Name: <%= address.street_name %></p>
+  </div>
+<% end %>
+
+<%= paginate @addresses %>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Winnipeg Data Explorer</title>
+  <%= csrf_meta_tags %>
+  <%= csp_meta_tag %>
+  <%= stylesheet_link_tag 'application', media: 'all' %>
+  <%= javascript_pack_tag 'application' %>
+</head>
+<body>
+  <header>
+    <h1>Winnipeg Data Explorer</h1>
+    <nav>
+      <ul>
+        <li><%= link_to 'Home', root_path %></li>
+        <li><%= link_to 'Winnipeg Addresses', addresses_path %></li>
+        <li><%= link_to 'Winnipeg Parks', parks_path %></li>
+        <li><%= link_to 'Winnipeg Schools', schools_path %></li>
+        <li><%= link_to 'About', about_path %></li>
+      </ul>
+    </nav>
+  </header>
+  <main>
+    <%= yield %>
+  </main>
+</body>
+</html>
