@@ -1,17 +1,11 @@
 <h1><%= @address.full_address %></h1>
-<p>Neighbourhood: <%= @address.neighbourhood %></p>
+<p>Street Number: <%= @address.street_number %></p>
 <p>Street Name: <%= @address.street_name %></p>
-
-# <h2>Parks</h2>
-# <ul>
-#   <% @parks.each do |park| %>
-#     <li><%= link_to park.park_name, park_path(park) %></li>
-#   <% end %>
-# </ul>
-
-# <h2>Schools</h2>
-# <ul>
-#   <% @schools.each do |school| %>
-#     <li><%= link_to school.school, school_path(school) %></li>
-#   <% end %>
-# </ul>
+<p>Street Type: <%= @address.street_type %></p>
+<p>Neighbourhood: <%= @address.neighbourhood %></p>
+<p>Ward: <%= @address.ward %></p>
+<p>School Division: <%= @address.school_division %></p>
+<p>School Division Ward: <%= @address.school_division_ward %></p>
+<p>Latitude: <%= @address.latitude %></p>
+<p>Longitude: <%= @address.longitude %></p>
+<p>Street Address: <%= @address.street_address %></p>

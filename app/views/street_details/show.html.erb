@@ -1,0 +1,22 @@
+<h1>Details for Street: <%= @street_name %></h1>
+
+<h2>Schools</h2>
+<% @schools.each do |school| %>
+  <div>
+    <p>School: <%= school.school %></p>
+    <p>Language: <%= school.language %></p>
+    <p>Year Installed: <%= school.year_installed %></p>
+    <p>Legislation Link: <%= school.legislation_link %></p>
+    <p>Location: <%= school.location %></p>
+  </div>
+<% end %>
+
+<h2>Parks</h2>
+<% @parks.each do |park| %>
+  <div>
+    <p>Park Name: <%= park.park_name %></p>
+    <p>Location Description: <%= park.location_description %></p>
+    <p>Neighbourhood: <%= park.neighbourhood %></p>
+    <p>Location: <%= park.location %></p>
+  </div>
+<% end %>

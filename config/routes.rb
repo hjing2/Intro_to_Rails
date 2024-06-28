@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'street_details/show'
   get 'pages/about'
 
   root 'addresses#index'
@@ -9,6 +10,7 @@ Rails.application.routes.draw do
 
   get 'search', to: 'search#index'
   get 'about', to: 'pages#about'
+  get 'street_details', to: 'street_details#show', as: 'street_details'
 
   get 'search/index'
   get 'schools/index'

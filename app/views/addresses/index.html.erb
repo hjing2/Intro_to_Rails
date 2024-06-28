@@ -1,10 +1,12 @@
-<h1>Addresses#index</h1>
+<h2>Addresses</h2>
 <p>Show some address information</p>
 <% @addresses.each do |address| %>
-  <div>
-    <h2><%= link_to address.full_address, address_path(address) %></h2>
-    <p>Neighbourhood: <%= address.neighbourhood %></p>
-    <p>Street Name: <%= address.street_name %></p>
+  <div class="row">
+    <div class="mt-4 col">
+      <h4><%= link_to address.full_address, address_path(address) %></h4>
+      <p>Neighbourhood: <%= address.neighbourhood %></p>
+      <p>Street Name: <%= link_to address.street_name, street_details_path(street_name: address.street_name) %></p>
+    </div>
   </div>
 <% end %>
 
