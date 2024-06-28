@@ -1,0 +1,16 @@
+<h1>Schools on <%= params[:street_name] %></h1>
+
+<% if @schools.empty? %>
+  <p>There are no schools on this street.</p>
+<% else %>
+  <% @schools.each do |school| %>
+    <div class="row">
+      <div class="mt-4 col">
+        <h4><%= link_to school.school, school_path(school) %></h4>
+        <p>Street: <%= school.street_name %></p>
+      </div>
+    </div>
+  <% end %>
+<% end %>
+
+<%= link_to 'Back to all streets', addresses_path %>

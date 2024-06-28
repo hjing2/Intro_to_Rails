@@ -6,7 +6,9 @@ Rails.application.routes.draw do
 
   resources :addresses, only: [:index, :show]
   resources :parks, only: [:index, :show]
+  get 'schools/search', to: 'schools#search', as: 'search_schools'
   resources :schools, only: [:index, :show]
+
 
   get 'search', to: 'search#index'
   get 'about', to: 'pages#about'
