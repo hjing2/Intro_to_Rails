@@ -1,2 +1,14 @@
-<h1>Parks#index</h1>
+<h1>Parks</h1>
 <p>Show Parks Information</p>
+
+<% @parks.each do |park| %>
+  <div class="row">
+    <div class="mt-4 col">
+      <h4><%= link_to park.park_name, park_path(park) %></h4>
+      <p>Neighbourhood: <%= park.neighbourhood %></p>
+      <p>Address: <%= park.address %></p>
+    </div>
+  </div>
+<% end %>
+
+<%= paginate @parks %>

@@ -1,9 +1,13 @@
-<h1>Schools#index</h1>
+<h1>Schools</h1>
 <p>Show Schools Information</p>
 
-<h1><%= @school.school %></h1>
-<p>Street Name: <%= @school.street_name %></p>
-<p>Language: <%= @school.language %></p>
-<p>Year Installed: <%= @school.year_installed %></p>
-<p>Legislation Link: <%= @school.legislation_link %></p>
-<p>Location: <%= @school.location %></p>
+<% @schools.each do |school| %>
+  <div class="row">
+    <div class="mt-4 col">
+      <h4><%= link_to school.school, school_path(school) %></h4>
+      <p>Street: <%= school.street_name %></p>
+    </div>
+  </div>
+<% end %>
+
+<%= paginate @schools %>

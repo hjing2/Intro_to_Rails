@@ -1,5 +1,5 @@
 class Park < ApplicationRecord
-    belongs_to :address
+    has_and_belongs_to_many :address
 
-    validates :park_name, :address, :location_description, :neighbourhood, :location, presence: true
+    validates :park_name, :location_description, :neighbourhood, :location, presence: true
 end

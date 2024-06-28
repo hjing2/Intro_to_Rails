@@ -15,18 +15,13 @@ School.destroy_all
 Park.destroy_all
 
 address_url = 'https://data.winnipeg.ca/resource/cam2-ii3u.json'
+addresses = JSON.parse(URI.open(address_url).read)
 school_url = 'https://data.winnipeg.ca/resource/5298-dhjx.json'
+schools = JSON.parse(URI.open(school_url).read)
 park_url = 'https://data.winnipeg.ca/resource/tx3d-pfxq.json'
+parks = JSON.parse(URI.open(park_url).read)
 
-def fetch_data(url)
-  uri = URI(url)
-  response = Net::HTTP.get(uri)
-  JSON.parse(response)
-end
 
-addresses = fetch_data(address_url)
-schools = fetch_data(school_url)
-parks = fetch_data(park_url)
 
 addresses.each do |a|
   Address.create!(
@@ -56,16 +51,12 @@ schools.each do |s|
 end
 
 parks.each do |p|
-  address = Address.find_by(neighbourhood: p['neighbourhood'])
-  if address
-    Park.create!(
-      park_name: p['park_name'],
-      address: address.full_address,
-      location_description: p['location_description'],
-      neighbourhood: p['neighbourhood'],
-      location: p['location']
-    )
-  end
+  Park.create!(
+    park_name: p['park_name'],
+    location_description: p['location_description'],
+    neighbourhood: p['neighbourhood'],
+    location: p['location']
+  )
 end
 
 puts "Seeded #{Address.count} addresses, #{School.count} schools, and #{Park.count} parks."
